@@ -1,0 +1,635 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Pedigree Adult Dry Dog Food",
+      "category": "Dog Food",
+      "description": "Complete and balanced dry food for adult dogs. Enriched with essential vitamins and minerals.",
+      "quantity": "3 kg",
+      "price": 599,
+      "image_url": "https://www.pedigree.in/files/styles/webp/public/2023-12/10274964-product-image-1.png.webp?VersionId=YFYFUD81pPKxe9H75q1kr_N8VapMEYQq&itok=dSPQ5iGu"
+    },
+    {
+      "id": "2",
+      "name": "Royal Canin Kitten Dry Cat Food",
+      "category": "Cat Food",
+      "description": "Nutrition tailored for kittens up to 12 months. Supports immunity and digestive health.",
+      "quantity": "2 kg",
+      "price": 1250,
+      "image_url": "https://cdn.royalcanin-weshare-online.io/g1bLTIcBBKJuub5qRflS/v66/00030111451033-cf-gs1?w=640&fm=jpg&auto=format,compress"
+    },
+    {
+      "id": "3",
+      "name": "Drools Chicken & Egg Puppy Dog Food",
+      "category": "Dog Food",
+      "description": "Rich in protein and DHA for growing puppies. Contains chicken and egg.",
+      "quantity": "4 kg",
+      "price": 849,
+      "image_url": "https://m.media-amazon.com/images/I/616v6VY8tlL._SX679_.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Whiskas Tuna in Jelly Wet Cat Food",
+      "category": "Cat Food",
+      "description": "Tuna in jelly for adult cats. Tasty and nutritious wet food with omega fatty acids.",
+      "quantity": "85 g x 12 pouches",
+      "price": 420,
+      "image_url": "https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf7971/files/2022-09/18853301006375-product-image-1.png"
+    },
+    {
+      "id": "5",
+      "name": "Purina Supercoat Adult Dog Food",
+      "category": "Dog Food",
+      "description": "Made with real chicken. No added artificial colors or flavors. Promotes shiny coat and healthy digestion.",
+      "quantity": "3 kg",
+      "price": 899,
+      "image_url": "https://www.petfoodreviews.com.au/wp-content/uploads/2022/05/Supercoat-Adult-Chicken-18-Kg-1024x1024.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Me-O Seafood Flavour Cat Food",
+      "category": "Cat Food",
+      "description": "Dry cat food with seafood flavor. Rich in taurine for eye health.",
+      "quantity": "1.2 kg",
+      "price": 350,
+      "image_url": "https://petzone.com/media/catalog/product/cache/11071fe0a2d8b9635d4c2eefcb2e9c84/m/e/me-oseafoodflavouradultcatdryfood7kg-1.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Royal Canin Maxi Puppy Dog Food",
+      "category": "Dog Food",
+      "description": "Complete nutrition for large breed puppies. Promotes bone and joint health.",
+      "quantity": "4 kg",
+      "price": 1650,
+      "image_url": "https://cdn.royalcanin-weshare-online.io/uOdYV30BaPOZra8qTsmQ/v843/sol-maxi-puppy-dry-packshot-b1?w=640&fm=jpg&auto=format,compress"
+    },
+    {
+      "id": "8",
+      "name": "Whiskas Mackerel Dry Cat Food",
+      "category": "Cat Food",
+      "description": "Dry food for adult cats with mackerel flavor. Contains essential nutrients and protein.",
+      "quantity": "3 kg",
+      "price": 749,
+      "image_url": "https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf7971/files/2022-09/8853301002493-product-image-1.png"
+    },
+    {
+      "id": "9",
+      "name": "Drools Focus Starter Dog Food",
+      "category": "Dog Food",
+      "description": "Special starter formula for mother and baby dogs. High protein and energy content.",
+      "quantity": "2.4 kg",
+      "price": 650,
+      "image_url": "https://www.zigly.com/media/catalog/product/cache/7cf8634edffe38d145d375c5e9783aea/d/r/drools_focus_starter_all_breed_dry_puppy_food-1.2_kg.jpg"
+    },
+    {
+      "id": "10",
+      "name": "Sheba Tuna White Meat Wet Cat Food",
+      "category": "Cat Food",
+      "description": "Premium cat food with white tuna meat in gravy. Irresistible taste for picky eaters.",
+      "quantity": "70 g x 6 trays",
+      "price": 360,
+      "image_url": "https://www.sheba.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf2656/files/2022-08/19334214023929-product-image-1.png"
+    },
+    {
+      "id": "11",
+      "name": "Pedigree Chicken & Vegetables Adult Dog Food",
+      "category": "Dog Food",
+      "description": "Dry food for adult dogs with chicken and vegetable flavor. Helps maintain strong bones and muscles.",
+      "quantity": "6 kg",
+      "price": 1099,
+      "image_url": "https://m.media-amazon.com/images/I/81+YMZg8fAL._SX679_.jpg"
+    },
+    {
+      "id": "12",
+      "name": "Royal Canin Persian Cat Food",
+      "category": "Cat Food",
+      "description": "Tailored nutrition for Persian cats. Helps support long coat and digestive health.",
+      "quantity": "2 kg",
+      "price": 1350,
+      "image_url": "https://cdn.royalcanin-weshare-online.io/KD84vYcBRYZmsWpccPiX/v25/center-front-hero-image-2552-030111843531-cat-01-jpg?w=640&fm=jpg&auto=format,compress"
+    },
+    {
+      "id": "13",
+      "name": "Purina Pro Plan Puppy Dog Food",
+      "category": "Dog Food",
+      "description": "Advanced formula for puppies. Contains colostrum to boost immunity.",
+      "quantity": "2.5 kg",
+      "price": 990,
+      "image_url": "https://www.loyalpetzone.com/wp-content/uploads/2018/11/purina-proplan.medium-large-puppy-new.jpg"
+    },
+    {
+      "id": "14",
+      "name": "Whiskas Chicken in Gravy Wet Cat Food",
+      "category": "Cat Food",
+      "description": "Juicy chicken pieces in gravy. Keeps cats hydrated and satisfied.",
+      "quantity": "85 g x 12 pouches",
+      "price": 420,
+      "image_url": "https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf7971/files/2022-09/18853301006177-product-image-1.png"
+    },
+    {
+      "id": "15",
+      "name": "Drools Adult Chicken & Rice Dog Food",
+      "category": "Dog Food",
+      "description": "Made with real chicken and rice. Supports skin health and digestion.",
+      "quantity": "10 kg",
+      "price": 1850,
+      "image_url": "https://www.bbassets.com/media/uploads/p/l/40142450_3-drools-dog-food-chicken-egg-adult.jpg"
+    },
+    {
+      "id": "16",
+      "name": "Me-O Tuna Wet Cat Food",
+      "category": "Cat Food",
+      "description": "Wet cat food with tuna chunks. High moisture content for better hydration.",
+      "quantity": "80 g x 12 cans",
+      "price": 540,
+      "image_url": "https://www.puprise.com/wp-content/uploads/2019/08/Me-O-Tuna-Canned-Wet-Cat-Food-400g.jpg"
+    },
+    {
+      "id": "17",
+      "name": "Royal Canin Labrador Retriever Adult",
+      "category": "Dog Food",
+      "description": "Tailored food for adult Labradors. Supports weight management and bone strength.",
+      "quantity": "3 kg",
+      "price": 1650,
+      "image_url": "https://static-shop.vivapets.com/media/catalog/product/cache/11fc96e7318a291175a0004e054be56e/p/a/packshot_36.jpg"
+    },
+    {
+      "id": "18",
+      "name": "Sheba Chicken & Tuna Wet Cat Food",
+      "category": "Cat Food",
+      "description": "Tender chicken and tuna in gravy. Delicious and protein-rich meal for cats.",
+      "quantity": "70 g x 12 trays",
+      "price": 720,
+      "image_url": "https://www.sheba.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf2656/files/2022-08/18853301004395-product-image-1.png"
+    },
+    {
+      "id": "19",
+      "name": "SmartHeart Chicken & Liver Puppy Dog Food",
+      "category": "Dog Food",
+      "description": "Formulated for puppies with chicken and liver flavor. Rich in DHA and calcium.",
+      "quantity": "3 kg",
+      "price": 699,
+      "image_url": "https://smartheart.my/media/catalog/product/cache/5aa7ee37b47cb1bddc11b56a0e64375e/1/3/132.png"
+    },
+    {
+      "id": "20",
+      "name": "Whiskas Ocean Fish Dry Cat Food",
+      "category": "Cat Food",
+      "description": "Dry food with ocean fish flavor for adult cats. Provides complete nutrition and great taste.",
+      "quantity": "1.2 kg",
+      "price": 330,
+      "image_url": "https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf7971/files/2022-09/8853301550055-product-image-1.png"
+    }
+  ],
+  "users": [
+    {
+      "id": "0d17",
+      "fullName": "Prince",
+      "email": "prince@gmail.com",
+      "password": "123123qwe",
+      "cart": [],
+      "orders": [
+        {
+          "id": 1746001510378,
+          "items": [
+            {
+              "productId": "4",
+              "name": "Whiskas Tuna in Jelly Wet Cat Food",
+              "image_url": "https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf7971/files/2022-09/18853301006375-product-image-1.png",
+              "price": 420,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "DWEjn",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "234567",
+            "country": "India"
+          },
+          "subtotal": 420,
+          "delivery": 50,
+          "tax": 42,
+          "total": 512,
+          "status": "Placed",
+          "placedAt": "2025-04-30T08:25:10.378Z"
+        },
+        {
+          "id": 1746003759719,
+          "items": [
+            {
+              "productId": "3",
+              "name": "Drools Chicken & Egg Puppy Dog Food",
+              "image_url": "https://m.media-amazon.com/images/I/616v6VY8tlL._SX679_.jpg",
+              "price": 849,
+              "quantity": 2
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "DWEjn",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "234567",
+            "country": "India"
+          },
+          "subtotal": 1698,
+          "delivery": 0,
+          "tax": 169.8,
+          "total": 1867.8,
+          "status": "Placed",
+          "placedAt": "2025-04-30T09:02:39.719Z"
+        },
+        {
+          "id": 1746175981808,
+          "items": [
+            {
+              "productId": "1",
+              "name": "Pedigree Adult Dry Dog Food",
+              "image_url": "https://www.pedigree.in/files/styles/webp/public/2023-12/10274964-product-image-1.png.webp?VersionId=YFYFUD81pPKxe9H75q1kr_N8VapMEYQq&itok=dSPQ5iGu",
+              "price": 599,
+              "quantity": 1
+            },
+            {
+              "productId": "12",
+              "name": "Royal Canin Persian Cat Food",
+              "image_url": "https://cdn.royalcanin-weshare-online.io/KD84vYcBRYZmsWpccPiX/v25/center-front-hero-image-2552-030111843531-cat-01-jpg?w=640&fm=jpg&auto=format,compress",
+              "price": 1350,
+              "quantity": 1
+            },
+            {
+              "productId": "15",
+              "name": "Drools Adult Chicken & Rice Dog Food",
+              "image_url": "https://www.bbassets.com/media/uploads/p/l/40142450_3-drools-dog-food-chicken-egg-adult.jpg",
+              "price": 1850,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 3799,
+          "delivery": 0,
+          "tax": 379.90000000000003,
+          "total": 4178.9,
+          "status": "Placed",
+          "placedAt": "2025-05-02T08:53:01.808Z"
+        },
+        {
+          "id": 1746244884273,
+          "items": [
+            {
+              "productId": "13",
+              "name": "Purina Pro Plan Puppy Dog Food",
+              "image_url": "https://www.loyalpetzone.com/wp-content/uploads/2018/11/purina-proplan.medium-large-puppy-new.jpg",
+              "price": 990,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 990,
+          "delivery": 50,
+          "tax": 99,
+          "total": 1139,
+          "status": "Placed",
+          "placedAt": "2025-05-03T04:01:24.273Z"
+        },
+        {
+          "id": 1746250855760,
+          "items": [
+            {
+              "productId": "3",
+              "name": "Drools Chicken & Egg Puppy Dog Food",
+              "image_url": "https://m.media-amazon.com/images/I/616v6VY8tlL._SX679_.jpg",
+              "price": 849,
+              "quantity": 2
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 1698,
+          "delivery": 0,
+          "tax": 169.8,
+          "total": 1867.8,
+          "status": "Placed",
+          "placedAt": "2025-05-03T05:40:55.760Z"
+        },
+        {
+          "id": 1746250864577,
+          "items": [
+            {
+              "productId": "3",
+              "name": "Drools Chicken & Egg Puppy Dog Food",
+              "image_url": "https://m.media-amazon.com/images/I/616v6VY8tlL._SX679_.jpg",
+              "price": 849,
+              "quantity": 2
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 1698,
+          "delivery": 0,
+          "tax": 169.8,
+          "total": 1867.8,
+          "status": "Placed",
+          "placedAt": "2025-05-03T05:41:04.577Z"
+        },
+        {
+          "id": 1746252293139,
+          "items": [
+            {
+              "productId": "2",
+              "name": "Royal Canin Kitten Dry Cat Food",
+              "image_url": "https://cdn.royalcanin-weshare-online.io/g1bLTIcBBKJuub5qRflS/v66/00030111451033-cf-gs1?w=640&fm=jpg&auto=format,compress",
+              "price": 1250,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 1250,
+          "delivery": 0,
+          "tax": 125,
+          "total": 1375,
+          "status": "Placed",
+          "placedAt": "2025-05-03T06:04:53.139Z"
+        },
+        {
+          "id": 1746253778588,
+          "items": [
+            {
+              "productId": "1",
+              "name": "Pedigree Adult Dry Dog Food",
+              "image_url": "https://www.pedigree.in/files/styles/webp/public/2023-12/10274964-product-image-1.png.webp?VersionId=YFYFUD81pPKxe9H75q1kr_N8VapMEYQq&itok=dSPQ5iGu",
+              "price": 599,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 599,
+          "delivery": 50,
+          "tax": 59.900000000000006,
+          "total": 708.9,
+          "status": "Placed",
+          "placedAt": "2025-05-03T06:29:38.588Z"
+        }
+      ],
+      "address": {
+        "fullName": "Prince",
+        "mobile": "1234567890",
+        "street": "Attingal",
+        "city": "Trivandrum",
+        "state": "Kerala",
+        "zipCode": "682304",
+        "country": "India"
+      }
+    },
+    {
+      "id": "37ae",
+      "fullName": "Roshith",
+      "email": "roshith@gmail.com",
+      "password": "456456rty",
+      "cart": []
+    },
+    {
+      "id": "b773",
+      "fullName": "Nisa",
+      "email": "nisa@gmail.com",
+      "password": "123123qwe",
+      "cart": []
+    },
+    {
+      "id": "795c",
+      "fullName": "Bijoy",
+      "email": "bijoy@gmail.com",
+      "password": "Bijoy@123",
+      "cart": [],
+      "orders": [
+        {
+          "id": 1746251115330,
+          "items": [
+            {
+              "productId": "1",
+              "name": "Pedigree Adult Dry Dog Food",
+              "image_url": "https://www.pedigree.in/files/styles/webp/public/2023-12/10274964-product-image-1.png.webp?VersionId=YFYFUD81pPKxe9H75q1kr_N8VapMEYQq&itok=dSPQ5iGu",
+              "price": 599,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Bijoy",
+            "mobile": "1234567890",
+            "street": "DWEjn",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 599,
+          "delivery": 50,
+          "tax": 59.900000000000006,
+          "total": 708.9,
+          "status": "Placed",
+          "placedAt": "2025-05-03T05:45:15.330Z"
+        },
+        {
+          "id": 1746251305948,
+          "items": [
+            {
+              "productId": "1",
+              "name": "Pedigree Adult Dry Dog Food",
+              "image_url": "https://www.pedigree.in/files/styles/webp/public/2023-12/10274964-product-image-1.png.webp?VersionId=YFYFUD81pPKxe9H75q1kr_N8VapMEYQq&itok=dSPQ5iGu",
+              "price": 599,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Bijoy",
+            "mobile": "1234567890",
+            "street": "DWEjn",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 599,
+          "delivery": 50,
+          "tax": 59.900000000000006,
+          "total": 708.9,
+          "status": "Placed",
+          "placedAt": "2025-05-03T05:48:25.948Z"
+        },
+        {
+          "id": 1746251675988,
+          "items": [
+            {
+              "productId": "2",
+              "name": "Royal Canin Kitten Dry Cat Food",
+              "image_url": "https://cdn.royalcanin-weshare-online.io/g1bLTIcBBKJuub5qRflS/v66/00030111451033-cf-gs1?w=640&fm=jpg&auto=format,compress",
+              "price": 1250,
+              "quantity": 1
+            },
+            {
+              "productId": "14",
+              "name": "Whiskas Chicken in Gravy Wet Cat Food",
+              "image_url": "https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf7971/files/2022-09/18853301006177-product-image-1.png",
+              "price": 420,
+              "quantity": 2
+            }
+          ],
+          "address": {
+            "fullName": "Bijoy",
+            "mobile": "1234567890",
+            "street": "DWEjn",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 2090,
+          "delivery": 0,
+          "tax": 209,
+          "total": 2299,
+          "status": "Placed",
+          "placedAt": "2025-05-03T05:54:35.988Z"
+        },
+        {
+          "id": 1746252003556,
+          "items": [
+            {
+              "productId": "2",
+              "name": "Royal Canin Kitten Dry Cat Food",
+              "image_url": "https://cdn.royalcanin-weshare-online.io/g1bLTIcBBKJuub5qRflS/v66/00030111451033-cf-gs1?w=640&fm=jpg&auto=format,compress",
+              "price": 1250,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Bijoy",
+            "mobile": "1234567890",
+            "street": "DWEjn",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 1250,
+          "delivery": 0,
+          "tax": 125,
+          "total": 1375,
+          "status": "Placed",
+          "placedAt": "2025-05-03T06:00:03.556Z"
+        },
+        {
+          "id": 1746252058056,
+          "items": [
+            {
+              "productId": "13",
+              "name": "Purina Pro Plan Puppy Dog Food",
+              "image_url": "https://www.loyalpetzone.com/wp-content/uploads/2018/11/purina-proplan.medium-large-puppy-new.jpg",
+              "price": 990,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Bijoy",
+            "mobile": "1234567890",
+            "street": "DWEjn",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 990,
+          "delivery": 50,
+          "tax": 99,
+          "total": 1139,
+          "status": "Placed",
+          "placedAt": "2025-05-03T06:00:58.056Z"
+        },
+        {
+          "id": 1746252237990,
+          "items": [
+            {
+              "productId": "3",
+              "name": "Drools Chicken & Egg Puppy Dog Food",
+              "image_url": "https://m.media-amazon.com/images/I/616v6VY8tlL._SX679_.jpg",
+              "price": 849,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Bijoy",
+            "mobile": "1234567890",
+            "street": "DWEjn",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 849,
+          "delivery": 50,
+          "tax": 84.9,
+          "total": 983.9,
+          "status": "Placed",
+          "placedAt": "2025-05-03T06:03:57.990Z"
+        }
+      ],
+      "address": {
+        "fullName": "Bijoy",
+        "mobile": "1234567890",
+        "street": "DWEjn",
+        "city": "Trivandrum",
+        "state": "Kerala",
+        "zipCode": "682304",
+        "country": "India"
+      }
+    }
+  ]
+}
