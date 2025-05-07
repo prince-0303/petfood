@@ -13,6 +13,7 @@ import { AuthContext } from './Context/AuthContext';
 import Checkout from './pages/Checkout/Checkout';
 import './App.css';
 import ThankYou from './pages/Thankyou/ThankYou';
+import AdminPanel from './pages/Admin/AdminPage';
 
 function App() {
   return (
@@ -28,30 +29,38 @@ function AppContent() {
   const { user } = useContext(AuthContext);
 
   return (
-    <>
-      <div className='App' >
-        <Navbar />
-        <SearchBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product/:name" element={<ProductPage />} />
-          <Route path="/login" element={<SignupLogin />} />
-
-          {/* Protected Route for Account */}
-
-          <Route
-            path="/account"
-            element={user ? <Account /> : <Navigate to="/login" replace />}
-          />
-
-          <Route path="/viewcart" element={<ViewCart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/thankyou" element={<ThankYou />} />
-
-        </Routes>
-        <Footer />
-      </div>
-    </>
+    <Routes>
+      <Route
+        path="/admin"
+        element={
+          <div className="AdminPage">
+            <AdminPanel />
+          </div>
+        }
+      />
+      <Route
+        path="/*"
+        element={
+          <div className="App">
+            <Navbar />
+            <SearchBar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/product/:name" element={<ProductPage />} />
+              <Route path="/login" element={<SignupLogin />} />
+              <Route
+                path="/account"
+                element={user ? <Account /> : <Navigate to="/login" replace />}
+              />
+              <Route path="/viewcart" element={<ViewCart />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/thankyou" element={<ThankYou />} />
+            </Routes>
+            <Footer />
+          </div>
+        }
+      />
+    </Routes>
   );
 }
 

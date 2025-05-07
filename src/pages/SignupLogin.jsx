@@ -31,8 +31,14 @@ const SignupLogin = () => {
         if (matchedUser) {
           login(matchedUser);
           alert('Login successful!');
-          navigate('/');
-        } else {
+
+          if (matchedUser.role === "admin") {
+            navigate("/admin");
+          } else {
+            navigate("/");
+          }
+        }
+        else {
           alert('Invalid credentials or user does not exist.');
         }
       } else {
@@ -40,7 +46,7 @@ const SignupLogin = () => {
         if (userExists) {
           alert('User already exists with this email.');
         } else {
-          const newUser = { fullName, email, password };
+          const newUser = { fullName, email, password, role: 'user' };
           await fetch('http://localhost:3000/users', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
