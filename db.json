@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "1",
-      "name": "Pedigree Adult Dry Dog Food",
+      "name": "Pedigree Pro Active 3",
       "category": "Dog Food",
       "description": "Complete and balanced dry food for adult dogs. Enriched with essential vitamins and minerals.",
       "quantity": "3 kg",
@@ -11,7 +11,7 @@
     },
     {
       "id": "2",
-      "name": "Royal Canin Kitten Dry Cat Food",
+      "name": "Royal Canin Kitten Dry Food",
       "category": "Cat Food",
       "description": "Nutrition tailored for kittens up to 12 months. Supports immunity and digestive health.",
       "quantity": "2 kg",
@@ -205,16 +205,7 @@
       "fullName": "Admin Prince",
       "email": "admin.paws@gmail.com",
       "password": "pawsadmin",
-      "role": "admin",
-      "cart": [
-        {
-          "productId": "21",
-          "name": "Rottweiler Adult Dry Food For Dog",
-          "image_url": "https://p1.aprimocdn.net/marspetcare/806fad5d-23d8-4348-a892-b1ef000fae2a/806fad5d-23d8-4348-a892-b1ef000fae2a_DownloadAsJpg.jpg?w=640&width=640&auto=webp&format=jpg&optimize=medium",
-          "price": "849",
-          "quantity": 2
-        }
-      ]
+      "role": "admin"
     },
     {
       "id": "0d17",
@@ -222,6 +213,7 @@
       "email": "prince@gmail.com",
       "password": "123123qwe",
       "role": "user",
+      "restricted": false,
       "cart": [],
       "orders": [
         {
@@ -453,6 +445,87 @@
           "total": 708.9,
           "status": "Placed",
           "placedAt": "2025-05-03T06:29:38.588Z"
+        },
+        {
+          "id": 1746680305834,
+          "items": [
+            {
+              "productId": "4",
+              "name": "Whiskas Tuna in Jelly Wet Cat Food",
+              "image_url": "https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf7971/files/2022-09/18853301006375-product-image-1.png",
+              "price": 494,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 494,
+          "delivery": 50,
+          "tax": 49.400000000000006,
+          "total": 593.4,
+          "status": "Placed",
+          "placedAt": "2025-05-08T04:58:25.834Z"
+        },
+        {
+          "id": 1746680508748,
+          "items": [
+            {
+              "productId": "3",
+              "name": "Drools Chicken & Egg Puppy Dog Food",
+              "image_url": "https://m.media-amazon.com/images/I/616v6VY8tlL._SX679_.jpg",
+              "price": 849,
+              "quantity": 2
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 1698,
+          "delivery": 0,
+          "tax": 169.8,
+          "total": 1867.8,
+          "status": "Placed",
+          "placedAt": "2025-05-08T05:01:48.748Z"
+        },
+        {
+          "id": 1746696809425,
+          "items": [
+            {
+              "productId": "1",
+              "name": "Pedigree Pro Active 3",
+              "image_url": "https://www.pedigree.in/files/styles/webp/public/2023-12/10274964-product-image-1.png.webp?VersionId=YFYFUD81pPKxe9H75q1kr_N8VapMEYQq&itok=dSPQ5iGu",
+              "price": 599,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 599,
+          "delivery": 50,
+          "tax": 59.900000000000006,
+          "total": 708.9,
+          "status": "Placed",
+          "placedAt": "2025-05-08T09:33:29.425Z"
         }
       ],
       "address": {
@@ -463,8 +536,7 @@
         "state": "Kerala",
         "zipCode": "682304",
         "country": "India"
-      },
-      "restricted": false
+      }
     },
     {
       "id": "37ae",
@@ -472,14 +544,7 @@
       "email": "roshith@gmail.com",
       "password": "456456rty",
       "role": "user",
-      "cart": []
-    },
-    {
-      "id": "b773",
-      "fullName": "Nisa",
-      "email": "nisa@gmail.com",
-      "password": "123123qwe",
-      "role": "user",
+      "restricted": false,
       "cart": []
     },
     {
@@ -488,6 +553,7 @@
       "email": "bijoy@gmail.com",
       "password": "Bijoy@123",
       "role": "user",
+      "restricted": false,
       "cart": [],
       "orders": [
         {
@@ -668,8 +734,54 @@
         "state": "Kerala",
         "zipCode": "682304",
         "country": "India"
-      },
-      "restricted": false
+      }
+    },
+    {
+      "id": "e23f",
+      "fullName": "nisa",
+      "email": "nisa@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "restricted": false,
+      "cart": [],
+      "orders": [
+        {
+          "id": 1746708454711,
+          "items": [
+            {
+              "productId": "10",
+              "name": "Sheba Tuna White Meat Wet Cat Food",
+              "image_url": "https://www.sheba.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf2656/files/2022-08/19334214023929-product-image-1.png",
+              "price": 359,
+              "quantity": 2
+            }
+          ],
+          "address": {
+            "fullName": "nisa",
+            "mobile": "9207769041",
+            "street": "kakkanad",
+            "city": "kochi",
+            "state": "Kerala",
+            "zipCode": "682030",
+            "country": "India"
+          },
+          "subtotal": 718,
+          "delivery": 50,
+          "tax": 71.8,
+          "total": 839.8,
+          "status": "Placed",
+          "placedAt": "2025-05-08T12:47:34.711Z"
+        }
+      ],
+      "address": {
+        "fullName": "nisa",
+        "mobile": "9207769041",
+        "street": "kakkanad",
+        "city": "kochi",
+        "state": "Kerala",
+        "zipCode": "682030",
+        "country": "India"
+      }
     }
   ]
 }

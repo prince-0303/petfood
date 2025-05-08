@@ -1,8 +1,10 @@
 import React from "react";
 import "../styles/Pagination.css";
+
 const Pagination = ({ currentPage, totalItems, itemsPerPage, onPageChange }) => {
-  const isFirstPage = currentPage === 1;
-  const isLastPage = currentPage * itemsPerPage >= totalItems;
+  const totalPages = Math.ceil(totalItems / itemsPerPage); // Calculate total pages
+  const isFirstPage = currentPage === 1; // Check if it's the first page
+  const isLastPage = currentPage === totalPages; // Check if it's the last page
 
   return (
     <div className="pagination-controls">
@@ -15,7 +17,7 @@ const Pagination = ({ currentPage, totalItems, itemsPerPage, onPageChange }) => 
         Prev
       </button>
 
-      {!isLastPage && (
+      {currentPage < totalPages && (
         <button
           className="pagination-button"
           onClick={() => onPageChange(currentPage + 1)}

@@ -44,7 +44,7 @@
     display: inline-block;
     margin-top: 1.5rem;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #ffb16d;
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -52,5 +52,5 @@
 }
 
 .home-btn:hover {
-    background-color: #45a049;
+    background-color: #ffc088;
 }

@@ -29,16 +29,16 @@ const SignupLogin = () => {
         );
 
         if (matchedUser) {
+          if (matchedUser.restricted) {
+            alert('Your account has been restricted. Please contact support.');
+            return;
+          }
+
           login(matchedUser);
           alert('Login successful!');
 
-          if (matchedUser.role === "admin") {
-            navigate("/admin");
-          } else {
-            navigate("/");
-          }
-        }
-        else {
+          navigate(matchedUser.role === "admin" ? "/admin" : "/");
+        } else {
           alert('Invalid credentials or user does not exist.');
         }
       } else {
@@ -46,7 +46,14 @@ const SignupLogin = () => {
         if (userExists) {
           alert('User already exists with this email.');
         } else {
-          const newUser = { fullName, email, password, role: 'user' };
+          const newUser = {
+            fullName,
+            email,
+            password,
+            role: 'user',
+            restricted: false,
+          };
+
           await fetch('http://localhost:3000/users', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -63,16 +70,12 @@ const SignupLogin = () => {
     }
   };
 
-  // Toggle between login and signup forms
-  const toggleForm = () => {
-    setIsLogin(!isLogin);
-  };
+  const toggleForm = () => setIsLogin(!isLogin);
 
   return (
     <div className="auth-container">
       <div className="auth-box">
         <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
-
         <form onSubmit={handleSubmit}>
           {!isLogin && (
             <input
@@ -97,10 +100,8 @@ const SignupLogin = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-
           <button type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
         </form>
-
         <p className="toggle-text">
           {isLogin ? "Don't have an account?" : "Already have an account?"}{' '}
           <span onClick={toggleForm}>
