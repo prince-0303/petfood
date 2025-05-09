@@ -788,53 +788,6 @@
         "zipCode": "682304",
         "country": "India"
       }
-    },
-    {
-      "id": "e23f",
-      "fullName": "nisa",
-      "email": "nisa@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "restricted": false,
-      "cart": [],
-      "orders": [
-        {
-          "id": 1746708454711,
-          "items": [
-            {
-              "productId": "10",
-              "name": "Sheba Tuna White Meat Wet Cat Food",
-              "image_url": "https://www.sheba.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf2656/files/2022-08/19334214023929-product-image-1.png",
-              "price": 359,
-              "quantity": 2
-            }
-          ],
-          "address": {
-            "fullName": "nisa",
-            "mobile": "9207769041",
-            "street": "kakkanad",
-            "city": "kochi",
-            "state": "Kerala",
-            "zipCode": "682030",
-            "country": "India"
-          },
-          "subtotal": 718,
-          "delivery": 50,
-          "tax": 71.8,
-          "total": 839.8,
-          "status": "Placed",
-          "placedAt": "2025-05-08T12:47:34.711Z"
-        }
-      ],
-      "address": {
-        "fullName": "nisa",
-        "mobile": "9207769041",
-        "street": "kakkanad",
-        "city": "kochi",
-        "state": "Kerala",
-        "zipCode": "682030",
-        "country": "India"
-      }
     }
   ]
 }
