@@ -188,15 +188,6 @@
       "price": "849",
       "quantity": "3 kg",
       "image_url": "https://p1.aprimocdn.net/marspetcare/806fad5d-23d8-4348-a892-b1ef000fae2a/806fad5d-23d8-4348-a892-b1ef000fae2a_DownloadAsJpg.jpg?w=640&width=640&auto=webp&format=jpg&optimize=medium"
-    },
-    {
-      "id": "22",
-      "name": "Digestive Care Dry Food",
-      "category": "Cat Food",
-      "description": "Balanced and complete feed for adult cats Recommended to help support healthy digestion.",
-      "price": "799",
-      "quantity": "2 kg",
-      "image_url": "https://cdn.royalcanin-weshare-online.io/2foya2QBIYfdNSoCbADs/v248/digestive-int-fcn-packshot?w=640&fm=jpg&auto=format,compress"
     }
   ],
   "users": [
@@ -205,7 +196,8 @@
       "fullName": "Admin Prince",
       "email": "admin.paws@gmail.com",
       "password": "pawsadmin",
-      "role": "admin"
+      "role": "admin",
+      "cart": []
     },
     {
       "id": "0d17",
@@ -526,6 +518,67 @@
           "total": 708.9,
           "status": "Placed",
           "placedAt": "2025-05-08T09:33:29.425Z"
+        },
+        {
+          "id": 1746720993944,
+          "items": [
+            {
+              "productId": "21",
+              "name": "Rottweiler Adult Dry Food For Dog",
+              "image_url": "https://p1.aprimocdn.net/marspetcare/806fad5d-23d8-4348-a892-b1ef000fae2a/806fad5d-23d8-4348-a892-b1ef000fae2a_DownloadAsJpg.jpg?w=640&width=640&auto=webp&format=jpg&optimize=medium",
+              "price": "849",
+              "quantity": 2
+            },
+            {
+              "productId": "2",
+              "name": "Royal Canin Kitten Dry Food",
+              "image_url": "https://cdn.royalcanin-weshare-online.io/g1bLTIcBBKJuub5qRflS/v66/00030111451033-cf-gs1?w=640&fm=jpg&auto=format,compress",
+              "price": 1249,
+              "quantity": 2
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 4196,
+          "delivery": 0,
+          "tax": 419.6,
+          "total": 4615.6,
+          "status": "Placed",
+          "placedAt": "2025-05-08T16:16:33.944Z"
+        },
+        {
+          "id": 1746725289362,
+          "items": [
+            {
+              "productId": "2",
+              "name": "Royal Canin Kitten Dry Food",
+              "image_url": "https://cdn.royalcanin-weshare-online.io/g1bLTIcBBKJuub5qRflS/v66/00030111451033-cf-gs1?w=640&fm=jpg&auto=format,compress",
+              "price": 1249,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 1249,
+          "delivery": 0,
+          "tax": 124.9,
+          "total": 1373.9,
+          "status": "Placed",
+          "placedAt": "2025-05-08T17:28:09.362Z"
         }
       ],
       "address": {

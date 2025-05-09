@@ -47,7 +47,7 @@ const Account = () => {
                     <div className="order-info">
                       <span><strong>Name:</strong> {item.name}</span>
                       <span><strong>Quantity:</strong> {item.quantity}</span>
-                      <span><strong>Price:</strong> ${item.price}</span>
+                      <span><strong>Price:</strong> ₹{item.price}</span>
                       <span><strong>Ordered:</strong> {new Date(order.placedAt).toLocaleDateString()}</span>
                     </div>
                   </div>

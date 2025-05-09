@@ -38,6 +38,7 @@ function AppContent() {
           </div>
         }
       />
+      <Route path="/login" element={<SignupLogin />} />
       <Route
         path="/*"
         element={
@@ -47,11 +48,7 @@ function AppContent() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/product/:name" element={<ProductPage />} />
-              <Route path="/login" element={<SignupLogin />} />
-              <Route
-                path="/account"
-                element={user ? <Account /> : <Navigate to="/login" replace />}
-              />
+              <Route path="/account" element={user ? <Account /> : <Navigate to="/login" replace />} />
               <Route path="/viewcart" element={<ViewCart />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/thankyou" element={<ThankYou />} />

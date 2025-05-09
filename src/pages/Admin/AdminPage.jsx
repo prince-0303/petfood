@@ -108,7 +108,7 @@ const AdminPanel = () => {
   };
 
   const handleProductDelete = async (id) => {
-    console.log("Deleting product with ID:", id); // Log the ID for debugging
+    console.log("Deleting product with ID:", id); 
 
     const url = `http://localhost:3000/products/${id}`;
     console.log("Requesting URL:", url); // Log the request URL
@@ -116,10 +116,9 @@ const AdminPanel = () => {
     if (window.confirm("Delete this product?")) {
       try {
         const response = await fetch(url, { method: "DELETE" });
-        console.log("DELETE Response:", response); // Log the response for debugging
-
+        console.log("DELETE Response:", response); 
         if (response.ok) {
-          setProducts(prev => prev.filter(product => product.id !== id)); // Remove from local state
+          setProducts(prev => prev.filter(product => product.id !== id)); 
         } else {
           console.error("Failed to delete product with ID", id);
           alert("Failed to delete product. Please try again.");
@@ -135,10 +134,10 @@ const AdminPanel = () => {
   const handleAddProduct = async () => {
     const { name, category, description, price, quantity, image_url } = newProduct;
 
-    // Check if all fields are filled
+
     if (name && category && description && price && quantity && image_url) {
       try {
-        // Parse the quantity to remove any non-numeric characters (like "kg")
+
         const parsedQuantity = parseFloat(quantity.replace(/[^\d.-]/g, ''));
 
         if (isNaN(parsedQuantity)) {
@@ -148,12 +147,11 @@ const AdminPanel = () => {
 
         const productToAdd = {
           ...newProduct,
-          price: parseFloat(price), // Ensure price is a number
-          quantity: parsedQuantity,  // Use the parsed numeric value for quantity
-          id: products.length + 1 // Adjust the logic for ID generation if needed
+          price: parseFloat(price),
+          quantity: parsedQuantity,
+          id: products.length + 1 
         };
 
-        // Make the POST request to add the product
         const response = await fetch("http://localhost:3000/products", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -164,13 +162,13 @@ const AdminPanel = () => {
           const addedProduct = await response.json();
           setProducts(prev => [...prev, addedProduct]);
 
-          // Reset the form after successful product addition
+
           setNewProduct({
             name: '',
             category: '',
             description: '',
             price: '',
-            quantity: '', // Reset quantity input
+            quantity: '', 
             image_url: ''
           });
         } else {

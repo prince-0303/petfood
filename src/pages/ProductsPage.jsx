@@ -80,7 +80,7 @@ const ProductPage = () => {
         body: JSON.stringify({ cart: updatedCart }),
       });
 
-      // ✅ Update cartCount in context
+      // Update cartCount
       const newTotalCount = updatedCart.reduce((acc, item) => acc + item.quantity, 0);
       setCartCount(newTotalCount);
 

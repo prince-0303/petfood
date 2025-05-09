@@ -1,4 +1,3 @@
-// src/pages/ThankYou.jsx
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import './ThankYou.css';
