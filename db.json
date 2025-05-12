@@ -179,6 +179,15 @@
       "price": "849",
       "quantity": "3 kg",
       "image_url": "https://p1.aprimocdn.net/marspetcare/806fad5d-23d8-4348-a892-b1ef000fae2a/806fad5d-23d8-4348-a892-b1ef000fae2a_DownloadAsJpg.jpg?w=640&width=640&auto=webp&format=jpg&optimize=medium"
+    },
+    {
+      "id": "21",
+      "name": "Purpet Adult Dog Food",
+      "category": "Dog Food",
+      "description": "Purepet Chicken & Vegetable Adult Dog Dry Food",
+      "price": 599,
+      "quantity": 2,
+      "image_url": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSdAem_NkxtBtB7D_BQzwJAe774IMfKEGMHWEGBgF12BD_-Do-fL7mhITLkEp2Cc9XYQqbQd1eU8hwSQ3iUUKH1-zmw0DA40Lrer6SvJu0B"
     }
   ],
   "users": [
@@ -188,7 +197,15 @@
       "email": "admin.paws@gmail.com",
       "password": "pawsadmin",
       "role": "admin",
-      "cart": []
+      "cart": [
+        {
+          "productId": "10",
+          "name": "Pedigree Chicken & Vegetables Adult Dog Food",
+          "image_url": "https://m.media-amazon.com/images/I/81+YMZg8fAL._SX679_.jpg",
+          "price": 1099,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": "0d17",
@@ -570,6 +587,94 @@
           "total": 1373.9,
           "status": "Placed",
           "placedAt": "2025-05-08T17:28:09.362Z"
+        },
+        {
+          "id": 1746785279389,
+          "items": [
+            {
+              "productId": "13",
+              "name": "Whiskas Chicken in Gravy Wet Cat Food",
+              "image_url": "https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf7971/files/2022-09/18853301006177-product-image-1.png",
+              "price": 419,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 419,
+          "delivery": 50,
+          "tax": 41.900000000000006,
+          "total": 510.9,
+          "status": "Placed",
+          "placedAt": "2025-05-09T10:07:59.389Z"
+        },
+        {
+          "id": 1746785891568,
+          "items": [
+            {
+              "productId": "3",
+              "name": "Whiskas Tuna in Jelly Wet Cat Food",
+              "image_url": "https://www.whiskas.in/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf7971/files/2022-09/18853301006375-product-image-1.png",
+              "price": 494,
+              "quantity": 1
+            },
+            {
+              "productId": "2",
+              "name": "Drools Chicken & Egg Puppy Dog Food",
+              "image_url": "https://m.media-amazon.com/images/I/616v6VY8tlL._SX679_.jpg",
+              "price": 849,
+              "quantity": 4
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 3890,
+          "delivery": 0,
+          "tax": 389,
+          "total": 4279,
+          "status": "Placed",
+          "placedAt": "2025-05-09T10:18:11.568Z"
+        },
+        {
+          "id": 1746965327760,
+          "items": [
+            {
+              "productId": "10",
+              "name": "Pedigree Chicken & Vegetables Adult Dog Food",
+              "image_url": "https://m.media-amazon.com/images/I/81+YMZg8fAL._SX679_.jpg",
+              "price": 1099,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Prince",
+            "mobile": "1234567890",
+            "street": "Attingal",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 1099,
+          "delivery": 0,
+          "tax": 109.9,
+          "total": 1208.9,
+          "status": "Placed",
+          "placedAt": "2025-05-11T12:08:47.760Z"
         }
       ],
       "address": {
