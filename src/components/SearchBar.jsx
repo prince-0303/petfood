@@ -10,8 +10,11 @@ const SearchBar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    axios.get('http://localhost:3000/products')
-      .then(res => setProducts(res.data))
+    axios
+      .get('http://127.0.0.1:8000/api/list/')
+      .then(res => {
+        setProducts(res.data.results); // ✅ correct
+      })
       .catch(err => console.error("Error fetching products:", err));
   }, []);
 
@@ -21,14 +24,18 @@ const SearchBar = () => {
       )
     : [];
 
+  // ✅ ENTER KEY → navigate using ID
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && filtered[0]) {
-      navigate(`/product/${encodeURIComponent(filtered[0].name)}`);
+      navigate(`/product/${filtered[0].id}`);
+      setQuery('');
     }
   };
 
-  const handleProductClick = (name) => {
-    navigate(`/product/${encodeURIComponent(name)}`);
+  // ✅ CLICK → navigate using ID
+  const handleProductClick = (id) => {
+    navigate(`/product/${id}`);
+    setQuery('');
   };
 
   if (location.pathname !== '/') {
@@ -51,9 +58,9 @@ const SearchBar = () => {
         {filtered.length > 0 ? (
           filtered.map(product => (
             <div
-              key={product.name}
+              key={product.id} 
               className="product-card"
-              onClick={() => handleProductClick(product.name)}
+              onClick={() => handleProductClick(product.id)}
             >
               <img src={product.image_url} alt={product.name} />
               <h3>{product.name}</h3>

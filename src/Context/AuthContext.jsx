@@ -1,75 +1,100 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { authService } from '../services/authService';
+import { cartService } from '../services/cartService';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(() => {
-        const storedUser = localStorage.getItem('loggedInUser');
-        return storedUser ? JSON.parse(storedUser) : null;
-    });
+  const [user, setUser] = useState(() => {
+    const storedUser = localStorage.getItem('user');
+    return storedUser ? JSON.parse(storedUser) : null;
+  });
+  
+  const [cartCount, setCartCount] = useState(0);
+  const [loading, setLoading] = useState(false);
 
-    const [cartCount, setCartCount] = useState(0);
+  // Fetch cart count from Django backend
+  const fetchAndSetCartCount = async () => {
+    if (!user) {
+      setCartCount(0);
+      return;
+    }
 
+    try {
+      const data = await cartService.getCartCount();
+      setCartCount(data.count);
+    } catch (error) {
+      console.error('Error fetching cart count:', error);
+      setCartCount(0);
+    }
+  };
 
-    // Fetch cart from server and calculate total quantity
-    const fetchAndSetCartCount = async (userId) => {
-        try {
-            const res = await fetch(`http://localhost:3000/users/${userId}`);
-            const data = await res.json();
-            const cart = data.cart || [];
-            const total = cart.reduce((acc, item) => acc + item.quantity, 0);
-            setCartCount(total);
-        } catch (error) {
-            console.error('Error fetching cart:', error);
-            setCartCount(0);
-        }
-    };
+  // Update cart count when user changes
+  useEffect(() => {
+    if (user) {
+      fetchAndSetCartCount();
+    } else {
+      setCartCount(0);
+    }
+  }, [user]);
 
-    // Update cart count on login or user change
-    useEffect(() => {
-        if (user) {
-            fetchAndSetCartCount(user.id);
-        } else {
-            setCartCount(0);
-        }
-    }, [user]);
+  const login = async (email, password) => {
+    setLoading(true);
+    try {
+      const data = await authService.login(email, password);
+      setUser(data.user);
+      await fetchAndSetCartCount();
+      return data;
+    } catch (error) {
+      console.error('Login error:', error);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    const login = async (userData) => {
-        try {
-            const res = await fetch(`http://localhost:3000/users/${userData.id}`);
-            const freshUser = await res.json();
-            localStorage.setItem('loggedInUser', JSON.stringify(freshUser));
-            setUser(freshUser);
-            fetchAndSetCartCount(freshUser.id);
-        } catch (error) {
-            console.error('Login fetch error:', error);
-        }
-    };
+  const register = async (userData) => {
+    setLoading(true);
+    try {
+      const data = await authService.register(userData);
+      setUser(data.user);
+      return data;
+    } catch (error) {
+      console.error('Register error:', error);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    const logout = async () => {
-        try {
-            localStorage.removeItem('loggedInUser');
-            setUser(null);
-            setCartCount(0);
-        } catch (error) {
-            console.error('Logout error:', error);
-        }
-    };
-    
+  const logout = async () => {
+    setLoading(true);
+    try {
+      await authService.logout();
+      setUser(null);
+      setCartCount(0);
+    } catch (error) {
+      console.error('Logout error:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    return (
-        <AuthContext.Provider
-            value={{
-                user,
-                setUser,
-                login,
-                logout,
-                cartCount,
-                setCartCount,
-                fetchAndSetCartCount,
-            }}
-        >
-            {children}
-        </AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider
+      value={{
+        user,
+        setUser,
+        login,
+        register,
+        logout,
+        cartCount,
+        setCartCount,
+        fetchAndSetCartCount,
+        loading,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 };

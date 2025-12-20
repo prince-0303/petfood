@@ -1,44 +1,32 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import '../styles/HomePage.css'
-import ProductList from '../components/ProductList'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import "../styles/HomePage.css";
+import ProductList from "../components/ProductList";
 
 const Home = () => {
-  const [products, setProducts] = useState([])
-  const [filteredProducts, setFilteredProducts] = useState([])
-  const [selectedCategory, setSelectedCategory] = useState('All')
-
-  // FETCHING PRODUCTS AND DISPLAYING
+  const [products, setProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
-    axios.get('http://localhost:3000/products')
-      .then(res => res.data)
-      .then(data => {
-        setProducts(data)
-        setFilteredProducts(data)
-      })
-      .catch(err => console.log(err))
-  }, [])
+    let url = "http://127.0.0.1:8000/api/list/";
 
-  // FILTERING PRODUCT BY CATEGORY 
-
-  const filterByCategory = (category) => {
-    setSelectedCategory(category)
-    if (category === 'All') {
-      setFilteredProducts(products)
-    } else {
-      const filtered = products.filter(product => product.category === category)
-      setFilteredProducts(filtered)
+    if (selectedCategory !== "All") {
+      url += `?category=${encodeURIComponent(selectedCategory)}`;
     }
-  }
+
+    axios
+      .get(url)
+      .then((res) => setProducts(res.data.results))
+      .catch((err) => console.log(err));
+  }, [selectedCategory]);
 
   return (
     <ProductList
-      filteredProducts={filteredProducts}
-      filterByCategory={filterByCategory}
+      filteredProducts={products}
+      filterByCategory={setSelectedCategory}
       selectedCategory={selectedCategory}
     />
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

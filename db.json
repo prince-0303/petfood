@@ -70,7 +70,7 @@
       "description": "Special starter formula for mother and baby dogs. High protein and energy content.",
       "quantity": "2.4 kg",
       "price": 649,
-      "image_url": "https://www.zigly.com/media/catalog/product/cache/7cf8634edffe38d145d375c5e9783aea/d/r/drools_focus_starter_all_breed_dry_puppy_food-1.2_kg.jpg"
+      "image_url": "https://m.media-amazon.com/images/I/61D9g9TtnQL._SX679_.jpg"
     },
     {
       "id": "9",
@@ -197,15 +197,7 @@
       "email": "admin.paws@gmail.com",
       "password": "pawsadmin",
       "role": "admin",
-      "cart": [
-        {
-          "productId": "10",
-          "name": "Pedigree Chicken & Vegetables Adult Dog Food",
-          "image_url": "https://m.media-amazon.com/images/I/81+YMZg8fAL._SX679_.jpg",
-          "price": 1099,
-          "quantity": 1
-        }
-      ]
+      "cart": []
     },
     {
       "id": "0d17",
@@ -935,6 +927,33 @@
           "total": 983.9,
           "status": "Placed",
           "placedAt": "2025-05-03T06:03:57.990Z"
+        },
+        {
+          "id": 1765948727358,
+          "items": [
+            {
+              "productId": "1",
+              "name": "Royal Canin Kitten Dry Food",
+              "image_url": "https://cdn.royalcanin-weshare-online.io/g1bLTIcBBKJuub5qRflS/v66/00030111451033-cf-gs1?w=640&fm=jpg&auto=format,compress",
+              "price": 1249,
+              "quantity": 1
+            }
+          ],
+          "address": {
+            "fullName": "Bijoy",
+            "mobile": "1234567890",
+            "street": "DWEjn",
+            "city": "Trivandrum",
+            "state": "Kerala",
+            "zipCode": "682304",
+            "country": "India"
+          },
+          "subtotal": 1249,
+          "delivery": 0,
+          "tax": 124.9,
+          "total": 1373.9,
+          "status": "Placed",
+          "placedAt": "2025-12-17T05:18:47.358Z"
         }
       ],
       "address": {

@@ -27,7 +27,7 @@ const Account = () => {
   return (
     <div className="account">
       <h2>Account Details</h2>
-      <p><strong>Name:</strong> {user.fullName}</p>
+      <p><strong>Name:</strong> {user.first_name} {user.last_name}</p>
       <p><strong>Email:</strong> {user.email}</p>
 
       <h3 className="order-title">Order History</h3>

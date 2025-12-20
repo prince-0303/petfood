@@ -5,103 +5,146 @@ import '../styles/SignupLogin.css';
 
 const SignupLogin = () => {
   const [isLogin, setIsLogin] = useState(true);
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const { login } = useContext(AuthContext);
+  const [formData, setFormData] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    password: '',
+    password2: '',
+  });
+  const [error, setError] = useState('');
+  
+  const { login, register, loading } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+    setError('');
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
 
-    if (!email || !password || (!isLogin && !fullName)) {
-      alert('Please fill in all required fields.');
-      return;
-    }
-
-    try {
-      const response = await fetch('http://localhost:3000/users');
-      const users = await response.json();
-
-      if (isLogin) {
-        const matchedUser = users.find(
-          (user) => user.email === email && user.password === password
-        );
-
-        if (matchedUser) {
-          if (matchedUser.restricted) {
-            alert('Your account has been restricted. Please contact support.');
-            return;
-          }
-
-          login(matchedUser);
-          alert('Login successful!');
-
-          navigate(matchedUser.role === "admin" ? "/admin" : "/");
-        } else {
-          alert('Invalid credentials or user does not exist.');
-        }
-      } else {
-        const userExists = users.some((user) => user.email === email);
-        if (userExists) {
-          alert('User already exists with this email.');
-        } else {
-          const newUser = {
-            fullName,
-            email,
-            password,
-            role: 'user',
-            restricted: false,
-          };
-
-          await fetch('http://localhost:3000/users', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newUser),
-          });
-
-          alert('Signup successful! You can now log in.');
-          setIsLogin(true);
-        }
+    if (isLogin) {
+      // Login
+      if (!formData.email || !formData.password) {
+        setError('Please fill in all fields.');
+        return;
       }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Something went wrong. Please try again later.');
+
+      try {
+        await login(formData.email, formData.password);
+        alert('Login successful!');
+        navigate('/');
+      } catch (err) {
+        setError(err.response?.data?.error || 'Login failed. Please check your credentials.');
+      }
+    } else {
+      // Register
+      if (!formData.first_name || !formData.email || !formData.password || !formData.password2) {
+        setError('Please fill in all fields.');
+        return;
+      }
+
+      if (formData.password !== formData.password2) {
+        setError('Passwords do not match.');
+        return;
+      }
+
+      try {
+        await register({
+          first_name: formData.first_name,
+          last_name: formData.last_name,
+          email: formData.email,
+          password: formData.password,
+          password2: formData.password2,
+        });
+        alert('Registration successful! You are now logged in.');
+        navigate('/');
+      } catch (err) {
+        setError(err.response?.data?.password?.[0] || err.response?.data?.email?.[0] || 'Registration failed.');
+      }
     }
   };
 
-  const toggleForm = () => setIsLogin(!isLogin);
+  const toggleForm = () => {
+    setIsLogin(!isLogin);
+    setError('');
+    setFormData({
+      first_name: '',
+      last_name: '',
+      email: '',
+      password: '',
+      password2: '',
+    });
+  };
 
   return (
     <div className="auth-container">
       <div className="auth-box">
         <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
+        
+        {error && <div className="error-message" style={{color: 'red', marginBottom: '10px'}}>{error}</div>}
+        
         <form onSubmit={handleSubmit}>
           {!isLogin && (
+            <>
+              <input
+                type="text"
+                name="first_name"
+                placeholder="First Name"
+                value={formData.first_name}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="last_name"
+                placeholder="Last Name (optional)"
+                value={formData.last_name}
+                onChange={handleChange}
+              />
+            </>
+          )}
+          
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          
+          {!isLogin && (
             <input
-              type="text"
-              placeholder="Full Name"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
+              type="password"
+              name="password2"
+              placeholder="Confirm Password"
+              value={formData.password2}
+              onChange={handleChange}
               required
             />
           )}
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
+          
+          <button type="submit" disabled={loading}>
+            {loading ? 'Processing...' : (isLogin ? 'Login' : 'Sign Up')}
+          </button>
         </form>
+        
         <p className="toggle-text">
           {isLogin ? "Don't have an account?" : "Already have an account?"}{' '}
           <span onClick={toggleForm}>

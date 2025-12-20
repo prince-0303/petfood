@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import SignupLogin from './pages/SignupLogin';
 import ProductPage from './pages/ProductsPage';
-import SearchBar from './components/SearchBar';
+import SearchBar from "./components/SearchBar";
 import Footer from './components/Footer';
 import Account from './pages/Account/Account';
 import ViewCart from './pages/Cart/ViewCart';
@@ -47,7 +47,7 @@ function AppContent() {
             <SearchBar />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/product/:name" element={<ProductPage />} />
+              <Route path="/product/:id" element={<ProductPage />} />
               <Route path="/account" element={user ? <Account /> : <Navigate to="/login" replace />} />
               <Route path="/viewcart" element={<ViewCart />} />
               <Route path="/checkout" element={<Checkout />} />
