@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/SignupLogin.css';
 
 const SignupLogin = () => {
@@ -26,50 +28,56 @@ const SignupLogin = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
+  e.preventDefault();
+  setError('');
 
-    if (isLogin) {
-      // Login
-      if (!formData.email || !formData.password) {
-        setError('Please fill in all fields.');
-        return;
-      }
-
-      try {
-        await login(formData.email, formData.password);
-        alert('Login successful!');
-        navigate('/');
-      } catch (err) {
-        setError(err.response?.data?.error || 'Login failed. Please check your credentials.');
-      }
-    } else {
-      // Register
-      if (!formData.first_name || !formData.email || !formData.password || !formData.password2) {
-        setError('Please fill in all fields.');
-        return;
-      }
-
-      if (formData.password !== formData.password2) {
-        setError('Passwords do not match.');
-        return;
-      }
-
-      try {
-        await register({
-          first_name: formData.first_name,
-          last_name: formData.last_name,
-          email: formData.email,
-          password: formData.password,
-          password2: formData.password2,
-        });
-        alert('Registration successful! You are now logged in.');
-        navigate('/');
-      } catch (err) {
-        setError(err.response?.data?.password?.[0] || err.response?.data?.email?.[0] || 'Registration failed.');
-      }
+  if (isLogin) {
+    // Login
+    if (!formData.email || !formData.password) {
+      setError('Please fill in all fields.');
+      return;
     }
-  };
+
+    try {
+      await login(formData.email, formData.password);
+      toast.success('Login successful! Welcome back!');
+      navigate('/');
+    } catch (err) {
+  console.error('Full login error:', err);
+  console.error('Backend response:', err.response?.data);
+  const backendMsg = err.response?.data?.error || err.response?.data?.detail || 'Unknown error';
+  setError(`Login failed: ${backendMsg}`);
+}
+  } else {
+    // Register
+    if (!formData.first_name || !formData.email || !formData.password || !formData.password2) {
+      setError('Please fill in all fields.');
+      return;
+    }
+
+    if (formData.password !== formData.password2) {
+      setError('Passwords do not match.');
+      return;
+    }
+
+    try {
+      await register({
+        first_name: formData.first_name,
+        last_name: formData.last_name || '',
+        email: formData.email,
+        password: formData.password,
+        password2: formData.password2,
+      });
+      toast.success('Account created successfully! Welcome!');
+      navigate('/');
+    } catch (err) {
+      const msg = err.response?.data?.password?.[0] || 
+                  err.response?.data?.email?.[0] || 
+                  'Registration failed. Please try again.';
+      setError(msg);
+    }
+  }
+};
 
   const toggleForm = () => {
     setIsLogin(!isLogin);

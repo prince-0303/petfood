@@ -1,3 +1,4 @@
+// src/Context/AuthContext.jsx
 import React, { createContext, useState, useEffect } from 'react';
 import { authService } from '../services/authService';
 import { cartService } from '../services/cartService';
@@ -5,31 +6,40 @@ import { cartService } from '../services/cartService';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(() => {
-    const storedUser = localStorage.getItem('user');
-    return storedUser ? JSON.parse(storedUser) : null;
-  });
-  
+  const [user, setUser] = useState(null);
   const [cartCount, setCartCount] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  // Fetch cart count from Django backend
   const fetchAndSetCartCount = async () => {
     if (!user) {
       setCartCount(0);
       return;
     }
-
     try {
       const data = await cartService.getCartCount();
-      setCartCount(data.count);
+      setCartCount(data.count || 0);
     } catch (error) {
       console.error('Error fetching cart count:', error);
       setCartCount(0);
     }
   };
 
-  // Update cart count when user changes
+  useEffect(() => {
+    const loadStoredUser = () => {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        try {
+          setUser(JSON.parse(storedUser));
+        } catch (e) {
+          console.error('Invalid user data in localStorage');
+        }
+      }
+      setLoading(false);
+    };
+
+    loadStoredUser();
+  }, []);
+
   useEffect(() => {
     if (user) {
       fetchAndSetCartCount();
@@ -46,7 +56,6 @@ export const AuthProvider = ({ children }) => {
       await fetchAndSetCartCount();
       return data;
     } catch (error) {
-      console.error('Login error:', error);
       throw error;
     } finally {
       setLoading(false);
@@ -57,10 +66,9 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     try {
       const data = await authService.register(userData);
-      setUser(data.user);
+
       return data;
     } catch (error) {
-      console.error('Register error:', error);
       throw error;
     } finally {
       setLoading(false);
