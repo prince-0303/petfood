@@ -28,11 +28,31 @@ function App() {
 function AppContent() {
   const { user, loading } = useContext(AuthContext);
 
+  // Protected Admin Route Component
+  const ProtectedAdminRoute = ({ children }) => {
+    if (loading) {
+      return (
+        <div style={{ textAlign: 'center', padding: '100px', fontSize: '18px' }}>
+          Loading...
+        </div>
+      );
+    }
+
+    if (!user) {
+      return <Navigate to="/login" replace />;
+    }
+
+    if (!user.is_staff) {
+      return <Navigate to="/" replace />;
+    }
+
+    return children;
+  };
+
   return (
     <div className="App">
       <Navbar />
       <SearchBar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductPage />} />
@@ -42,9 +62,18 @@ function AppContent() {
           path="/login" 
           element={user ? <Navigate to="/" replace /> : <SignupLogin />} 
         />
-        <Route path="/admin" element={<AdminPanel />} />
 
-        {/* Protected */}
+        {/* Protected Admin Route */}
+        <Route 
+          path="/admin" 
+          element={
+            <ProtectedAdminRoute>
+              <AdminPanel />
+            </ProtectedAdminRoute>
+          } 
+        />
+
+        {/* Protected User Routes */}
         <Route
           path="/account"
           element={
@@ -59,12 +88,10 @@ function AppContent() {
             )
           }
         />
-
         <Route path="/viewcart" element={<ViewCart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/thankyou" element={<ThankYou />} />
       </Routes>
-
       <Footer />
       <ToastContainer />
     </div>
