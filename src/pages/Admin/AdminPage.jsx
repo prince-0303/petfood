@@ -140,7 +140,7 @@ const AdminPanel = () => {
       try {
         const productToAdd = {
           name,
-          category: parseInt(category), // Assuming category is ID
+          category: parseInt(category), 
           description,
           price: parseFloat(price),
           weight_value: parseFloat(weight_value),
@@ -252,9 +252,6 @@ const AdminPanel = () => {
                     <td className="table-cell">
                       <button className="button-delete" onClick={() => handleUserDelete(user.id)}>
                         Delete
-                      </button>
-                      <button className="button-edit" onClick={() => handleUserRestrict(user.id, user.restricted)}>
-                        {user.restricted ? "Unrestrict" : "Restrict"}
                       </button>
                     </td>
                     <td className="table-cell">

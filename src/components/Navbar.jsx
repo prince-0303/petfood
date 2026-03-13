@@ -11,7 +11,12 @@ const Navbar = () => {
 
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
+  const isAdminPage = location.pathname === '/admin';
 
+  if (isAdminPage) {
+    return null;
+  }
+  
   return (
     <nav className="navbar">
       <div className="navbar-left">
