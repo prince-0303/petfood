@@ -38,7 +38,7 @@ const Checkout = () => {
 
                 // Auto-select first address if available
                 if (addrRes.length > 0) {
-                    setSelectedAddressId(addrRes[0].id);
+                    setSelectedAddressId(parseInt(addrRes[0].id));
                 } else {
                     setShowNewAddressForm(true);
                 }
@@ -137,7 +137,7 @@ const Checkout = () => {
                                         name="address"
                                         value={addr.id}
                                         checked={selectedAddressId === addr.id}
-                                        onChange={(e) => setSelectedAddressId(e.target.value)}
+                                        onChange={(e) => setSelectedAddressId(parseInt(e.target.value))}
                                     />
                                     <div>
                                         <strong>{addr.full_name}</strong> ({addr.mobile})<br />
