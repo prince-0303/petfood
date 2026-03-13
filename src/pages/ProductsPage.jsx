@@ -17,7 +17,7 @@ const ProductPage = () => {
   // Fetch product details
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/list/${id}/`)
+      .get(`${import.meta.env.VITE_API_URL}/list/${id}/`)
       .then((res) => {
         setProduct(res.data);
         setQuantity(1);
@@ -41,7 +41,7 @@ const ProductPage = () => {
     try {
       const token = localStorage.getItem("access_token");
       await axios.post(
-        "http://127.0.0.1:8000/api/cart/add/",
+        `${import.meta.env.VITE_API_URL}/cart/add/`,
         {
           product_id: product.id,
           quantity: quantity,

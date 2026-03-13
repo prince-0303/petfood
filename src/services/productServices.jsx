@@ -1,5 +1,5 @@
 export const getProducts = async (category = "All") => {
-  let url = "http://127.0.0.1:8000/api/products";
+  let url = `${import.meta.env.VITE_API_URL}/products`;
 
   if (category !== "All") {
     url += `?category=${encodeURIComponent(category)}`;

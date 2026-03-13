@@ -8,7 +8,7 @@ const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
-    let url = "http://127.0.0.1:8000/api/list/";
+    let url = `${import.meta.env.VITE_API_URL}/list/`;
 
     if (selectedCategory !== "All") {
       url += `?category=${encodeURIComponent(selectedCategory)}`;

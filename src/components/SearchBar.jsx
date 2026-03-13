@@ -11,7 +11,7 @@ const SearchBar = () => {
 
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/list/')
+      .get(`${import.meta.env.VITE_API_URL}/list/`)
       .then(res => {
         setProducts(res.data.results); // ✅ correct
       })
@@ -20,8 +20,8 @@ const SearchBar = () => {
 
   const filtered = query.trim()
     ? products.filter(product =>
-        product.name.toLowerCase().includes(query.toLowerCase())
-      )
+      product.name.toLowerCase().includes(query.toLowerCase())
+    )
     : [];
 
   // ✅ ENTER KEY → navigate using ID
@@ -58,7 +58,7 @@ const SearchBar = () => {
         {filtered.length > 0 ? (
           filtered.map(product => (
             <div
-              key={product.id} 
+              key={product.id}
               className="product-card"
               onClick={() => handleProductClick(product.id)}
             >
